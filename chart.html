@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa nauki matematyki</title>
+</head>
+
+<body>
+    <div class="mermaid">
+    flowchart TB
+
+    %% DEFINICJE TEMATÓW
+
+    A["Podstawy: liczby, równania, zbiory i logika"]
+    C["Liczby zespolone"]
+    G["Geometria liczb zespolonych"]
+    P["Wielomiany i pierwiastki"]
+
+    D["Działania i ich własności"]
+    GR["Grupy i podgrupy"]
+    R["Pierścienie"]
+    F["Ciała: ℝ, ℂ, ℤₚ"]
+    MOD["Arytmetyka modulo"]
+
+    M["Macierze i układy równań"]
+    V["Wektory, przestrzenie wektorowe, bazy"]
+    T["Przekształcenia liniowe"]
+    E["Wartości i wektory własne"]
+
+    %% GŁÓWNE ZALEŻNOŚCI
+
+    A --> C
+    A --> D
+    A --> M
+
+    C --> G
+    C --> P
+
+    D --> GR
+    GR --> R
+    R --> F
+
+    D --> MOD
+    MOD --> F
+
+    F --> V
+    M --> V
+
+    V --> T
+    M --> T
+
+    P --> E
+    T --> E
+
+    %% POWIĄZANIA DODATKOWE
+
+    C -.-> F
+    C -.-> M
+    G -.-> V
+    D -.-> M
+
+    %% WYGLĄD ELEMENTÓW
+
+    classDef default fill:#f1f5f9,stroke:#94a3b8,color:#0f172a,stroke-width:1.5px
+    classDef done fill:#dcfce7,stroke:#16a34a,color:#166534,stroke-width:2.5px
+
+    %% PRZEROBIONE TEMATY
+
+    class A,C,D,G,GR,P,MOD done
+
+    </div>
+
+    <script type="module">
+        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.esm.min.mjs";
+
+        mermaid.initialize({
+            startOnLoad: true,
+            securityLevel: "strict"
+        });
+    </script>
+</body>
+</html>
